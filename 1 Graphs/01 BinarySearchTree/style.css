@@ -1,0 +1,14 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Consolas';
+}
+canvas {
+  display: block;
+}
+input, button {
+  font-family: inherit;
+}
+* {
+  outline: none;
+}
