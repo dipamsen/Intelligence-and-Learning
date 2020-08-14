@@ -11,8 +11,8 @@ function setup() {
   textAlign(CENTER, CENTER);
   textSize(20);
   textFont('monospace');
-  createDiv('<br>Press Space to move to next step.<br><br>')
-  noLoop();
+  // createDiv('<br>Press Space to move to next step.<br><br>')
+  // noLoop();
   resultDiv = createDiv();
   resultDiv.style('color', 'red');
   console.log(graph);
@@ -37,8 +37,8 @@ function setup() {
       getVertex(start).visited = true;
       resultDiv.html(null);
       found = false; done = false;
-      redraw();
-      
+      // redraw();
+
     }
   })
 }
@@ -46,12 +46,12 @@ function setup() {
 let start = 'A'
 let end = 'B';
 
-function keyPressed() {
-  if(keyCode == 32) {
-    if(!done) redraw();
-    // else loop();
-  }
-}
+// function keyPressed() {
+//   if(keyCode == 32) {
+//     if(!done) redraw();
+//     // else loop();
+//   }
+// }
 
 function draw() {
   background(150);
@@ -60,8 +60,8 @@ function draw() {
   if (q.length !== 0) {
     node = q.dequeue();
     node.highlight('lightblue');
-    
-    if(node == getVertex(end)) {
+
+    if (node == getVertex(end)) {
       let array = []
       getPath(node, array);
       result = (array.reverse().join(' ⇒ '));
@@ -69,7 +69,7 @@ function draw() {
       found = true;
       resultDiv.style('font-size', '20px');
     }
-    
+
     for (let neighbour of node.neighbours) {
       if (!neighbour.visited) {
         neighbour.visited = true;
@@ -80,7 +80,7 @@ function draw() {
     }
   } else {
     done = true;
-    if(!found) {
+    if (!found) {
       resultDiv.html(`No path found from ${start} to ${end}.`);
     }
   }
@@ -88,6 +88,6 @@ function draw() {
 
 function getPath(node, arr = []) {
   arr.push(node.value);
-  if(node.parent == null) return arr;
+  if (node.parent == null) return arr;
   return getPath(node.parent, arr);
 }
