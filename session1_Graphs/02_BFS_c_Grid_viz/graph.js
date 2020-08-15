@@ -74,21 +74,21 @@ class Vertex {
     this.neighbours = [];
     let leftEdge, rightEdge, topEdge, bottomEdge;
 
-    if (this.x > 0 && random() < 0.2) {
-      // LEFT
-      leftEdge = nodes[this.y][this.x - 1];
-      this.neighbours.push(leftEdge)
-    }
+    // if (this.x > 0 && random() < 0.2) {
+    //   // LEFT
+    //   leftEdge = nodes[this.y][this.x - 1];
+    //   this.neighbours.push(leftEdge)
+    // }
     if (this.x < (cols - 1) && random() < 0.8) {
       // RIGHT
       rightEdge = nodes[this.y][this.x + 1]
       this.neighbours.push(rightEdge)
     }
-    if (this.y > 0 && random() < 0.2) {
-      // TOP
-      topEdge = nodes[this.y - 1][this.x]
-      this.neighbours.push(topEdge)
-    }
+    // if (this.y > 0 && random() < 0.2) {
+    //   // TOP
+    //   topEdge = nodes[this.y - 1][this.x]
+    //   this.neighbours.push(topEdge)
+    // }
     if (this.y < (rows - 1) && random() < 0.8) {
       // BOTTOM
       bottomEdge = nodes[this.y + 1][this.x]
