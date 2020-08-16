@@ -61,9 +61,13 @@ function DFS(at) {
   at.visited = true
   console.log(at.val)
   neighbours = at.neighbours
-  for (let n of neighbours) {
+  for (let i = 0; i < neighbours.length; i++) {
+    n = neighbours[i]
     DFS(n);
   }
+  // for (let n of neighbours) {
+  //   DFS(n);
+  // }
 }
 
 
