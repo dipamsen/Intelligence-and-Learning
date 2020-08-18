@@ -92,12 +92,14 @@ function dijkstra(graph, source) {
     if (!vt) break;
     drawingGraph[vt].visited = true;
     let unvisited = drawingGraph[vt].getUnvisitedNeighbours();
+    let i = 0;
     for (let cell of unvisited) {
       let newD = dist[vt] + distance(vt, cell.val);
       if (newD < dist[cell.val]) {
         dist[cell.val] = newD;
         prev[cell.val] = vt;
       }
+      i++
     }
     if (!drawingGraph[vt].getNearestUnvisitedNeighbour()) {
       break;

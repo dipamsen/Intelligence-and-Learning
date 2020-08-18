@@ -15,7 +15,7 @@ function setup() {
   ySpace = height / 10;
   fill(0);
   sorted = createDiv('');
-  sorted.position(0,60);
+  sorted.position(0, 90);
   sorted.style('color', 'white');
   sorted.style('font-weight', 'bold');
   noStroke();
@@ -32,17 +32,25 @@ function setup() {
   box.attribute('placeholder', "Write Node Value");
   let button = createButton('Add Node');
   button.position(0, 30);
+  let remove = createButton('Remove Node');
+  remove.position(0, 60);
   let tra = createButton('Traverse');
   tra.position(width / 2 - 15, 0);
-  tra.mousePressed(()=>{
-    if(tree.root) {
+  tra.mousePressed(() => {
+    if (tree.root) {
       let array = [];
       tree.root.inOrder(array);
-      sorted.html(array)    }
+      sorted.html(array)
+    }
   })
   button.mousePressed(() => {
     let val = parseInt(box.value());
     if (val) tree.addNode(val);
+    box.value(null);
+  })
+  remove.mousePressed(() => {
+    let val = parseInt(box.value());
+    if (val) tree.remove(val);
     box.value(null);
   })
   let box2 = createInput();
