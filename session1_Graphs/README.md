@@ -2,7 +2,7 @@
 
 #### Projects
 <ol start="0">
-<li> [Steering](./P0_Steering)
+<li> [Steering](./P0_Steering) </li>
 <li> [Binary Search Tree](./P1_BinarySearchTree)
 <li> [Breadth First Search - Traversal](./P2_BFS_a_Traversal)
 <li> [Breadth First Search - Shortest Path](./P3_BFS_b_Shortest_Path)
@@ -12,4 +12,5 @@
 <li> [Dijkstra's Shortest Path](./P7_Dijkstra_Shortest_Path)
 <li> [Animal Guessr](./P8_Animal_Guessr)
 <li> [Greedy Travelling Salesperson](./P9_Greedy_Salesperson)
+
 </ol>
