@@ -18,35 +18,9 @@ function draw() {
 
 }
 
-// function DFS(v) {
-//   let S = new Stack();
-//   S.push(v);
-//   while (S.length > 0) {
-//     v = S.pop()
-//     if (!v.visited) {
-//       v.visited = true;
-//       for (let w of v.neighbours) {
-//         S.push(w)
-//       }
-//     }
-//   }
-// }
-
 let next;
 
 let stack = new Stack();
-
-// function DFS(v) {
-//   v.visited = true;
-//   console.log(v.val)
-//   stack.push(v);
-//   next = getRandomUnvisited(v);
-//   if (!next) {
-//     next = stack.pop();
-//   }
-//   // if (stack.length > 0)
-//   DFS(next);
-// }
 
 // Global or class scope variables
 // n = number of nodes in the graph
@@ -57,24 +31,17 @@ function DFS(at) {
     // setTimeout
     return
   }
-
   at.visited = true
+  at.setCurrent();
   console.log(at.val)
-  neighbours = at.neighbours
+  let neighbours = at.getUnvisitedNeighbours();
   for (let i = 0; i < neighbours.length; i++) {
-    n = neighbours[i]
-    DFS(n);
+    // setTimeout(() => {
+    DFS(neighbours[i]);
+    // }, i * 1000)
   }
-  // for (let n of neighbours) {
-  //   DFS(n);
-  // }
 }
 
-
-// function keyPressed() {
-//   DFS(next);
-
-// }
 
 let grAdj = { 0: [1, 9], 1: [0, 8], 2: [3], 3: [2, 4, 5, 7], 4: [3], 5: [3, 6], 6: [5, 7], 7: [3, 6, 8, 10, 11], 8: [1, 7, 9], 9: [], 10: [11], 11: [7] }
 

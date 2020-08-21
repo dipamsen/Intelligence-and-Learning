@@ -11,7 +11,9 @@ class Vertex {
   highlight() {
     push();
     stroke(0);
-    if (this.visited) fill('purple')
+    // console.log(col);
+    if (this.curr) fill("green")
+    else if (this.visited) fill('purple')
     else fill(255);
     ellipse(this.x, this.y, 50);
     if (this.visited) fill(255)
@@ -19,6 +21,17 @@ class Vertex {
     noStroke();
     text(this.val, this.x, this.y);
     pop();
+  }
+  setCurrent() {
+    for (let vt in graph) {
+      graph[vt].curr = false;
+    }
+    this.curr = true;
+  }
+  getUnvisitedNeighbours() {
+    let neighbours = this.neighbours.slice();
+    neighbours.filter(elt => !elt.visited);
+    return neighbours;
   }
   addEdges(edges) {
     this.neighbours = edges;
