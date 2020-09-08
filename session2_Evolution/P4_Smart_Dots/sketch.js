@@ -11,7 +11,7 @@ let gen = 1;
 
 function setup() {
   createCanvas(600, 700);
-  population =  Population.create(popsize);
+  population = Population.create(popsize);
   target = createVector(width / 2, 50);
 }
 
@@ -25,13 +25,13 @@ function draw() {
   noStroke();
   fill(0);
   textSize(15);
-  text("Generation: "+gen, 20, 20); 
-  text("Population Size: "+popsize, 20, 40); 
-  
+  text("Generation: " + gen, 20, 20);
+  text("Population Size: " + popsize, 20, 40);
+
   for (let obs of obstacles) {
     obs.display();
   }
-  
+
   frame++;
   if (frame == cycles && frame > 0) {
 
@@ -52,11 +52,11 @@ function draw() {
 function selectParent() {
   let fitnessSum = population.totalFitness;
   let rand = random(fitnessSum);
-  
-  let runningSum= 0;
+
+  let runningSum = 0;
   for (let dot of population) {
     runningSum += dot.fitness;
-    if(runningSum>rand) return dot;
+    if (runningSum > rand) return dot;
   }
 }
 
